@@ -15,14 +15,14 @@ public class Login {
         System.setProperty("webdriver.chrome.driver", "C:\\chromedriver-win132/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://www.saucedemo.com/");
+        driver.get("https://rahulshettyacademy.com/locatorspractice/");
     }
 
     @Test
     public void testCheckoutDetail() throws InterruptedException {
         // login
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login("albertjuntak@gmail.com", "rahulshettyacademy");
         Thread.sleep(2000);
     }
 }

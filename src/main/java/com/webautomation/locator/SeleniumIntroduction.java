@@ -9,15 +9,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class SeleniumIntroduction {
     public static void main(String[] args) throws InterruptedException {
-        // loginScenario();
+        loginScenario();
         // incorrectPasswordScenario();
 
-        loginForgotPasswordScenario();
+        // loginForgotPasswordScenario();
     }
 
     public static void loginScenario() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver",
-                "/Users/bytedance/CourseQAAutomation/Web Automation/chromedriver");
+                "C:\\chromedriver-win132/chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
