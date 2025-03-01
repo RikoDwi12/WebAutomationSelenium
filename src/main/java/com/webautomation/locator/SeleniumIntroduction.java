@@ -1,6 +1,5 @@
 package com.webautomation.locator;
 
-import java.sql.Time;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -16,8 +15,9 @@ public class SeleniumIntroduction {
         loginForgotPasswordScenario();
     }
 
-    public static void loginScenario() throws InterruptedException{
-        System.setProperty("webdriver.chrome.driver", "/Users/bytedance/CourseQAAutomation/Web Automation/chromedriver");
+    public static void loginScenario() throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver",
+                "/Users/bytedance/CourseQAAutomation/Web Automation/chromedriver");
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
@@ -35,18 +35,18 @@ public class SeleniumIntroduction {
         WebElement signBtn = driver.findElement(By.className("signInBtn"));
         signBtn.click();
 
-
         Thread.sleep(5000);
 
-        String name =  driver.findElement(By.xpath("//div[@class='login-container']/h2")).getText();
+        String name = driver.findElement(By.xpath("//div[@class='login-container']/h2")).getText();
 
         System.out.println("Ini adalah nama user " + name);
 
         driver.quit();
     }
 
-    public static void incorrectPasswordScenario() throws InterruptedException{
-        System.setProperty("webdriver.chrome.driver", "/Users/bytedance/CourseQAAutomation/Web Automation/chromedriver");
+    public static void incorrectPasswordScenario() throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver",
+                "/Users/bytedance/CourseQAAutomation/Web Automation/chromedriver");
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
@@ -59,16 +59,16 @@ public class SeleniumIntroduction {
 
         driver.findElement(By.className("signInBtn")).click();
 
-
-        // String errorMessage = driver.findElement(By.xpath("//p[@class='error']")).getText();
+        // String errorMessage =
+        // driver.findElement(By.xpath("//p[@class='error']")).getText();
 
         String errorMessage = driver.findElement(By.cssSelector("p.error")).getText();
 
-        System.out.println("Ini error message " + errorMessage );
+        System.out.println("Ini error message " + errorMessage);
 
         Thread.sleep(5000);
 
-        String username =  driver.findElement(By.cssSelector("input#inputUsername")).getText();
+        String username = driver.findElement(By.cssSelector("input#inputUsername")).getText();
         String password = driver.findElement(By.xpath("//input[@placeholder='Password']")).getText();
 
         System.out.println("username " + username + "password " + password);
@@ -80,8 +80,9 @@ public class SeleniumIntroduction {
         driver.quit();
     }
 
-    public static void loginForgotPasswordScenario() throws InterruptedException{
-        System.setProperty("webdriver.chrome.driver", "/Users/bytedance/CourseQAAutomation/Web Automation/chromedriver");
+    public static void loginForgotPasswordScenario() throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver",
+                "/Users/bytedance/CourseQAAutomation/Web Automation/chromedriver");
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
@@ -93,10 +94,9 @@ public class SeleniumIntroduction {
 
         Thread.sleep(5000);
 
-        //Mengisi data
+        // Mengisi data
         driver.findElement(By.xpath("//input[@placeholder='Name']")).sendKeys("Albert Simanjuntak");
         driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("albertafteroffice@gmail.com");
-
 
         driver.findElement(By.cssSelector("button.reset-pwd-btn")).click();
         Thread.sleep(5000);
