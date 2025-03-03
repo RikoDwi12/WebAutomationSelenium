@@ -19,11 +19,7 @@ public class LocatorPractice {
 
         Thread.sleep(5000);
 
-        /*
-         * Select currency
-         * condition : dropdown
-         */
-
+        // case dropdown tanpa click pake select
         WebElement staticDropdown = driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency"));
 
         Select dropdown = new Select(staticDropdown);
@@ -94,7 +90,34 @@ public class LocatorPractice {
             }
         }
 
-        Thread.sleep(4000);
+        // Handle suggestion
+        driver.findElement(By.xpath("(//*[@id='autosuggest'])[1]")).sendKeys("ind");
+
+        Thread.sleep(3000);
+
+        // driver.findElement(By.xpath("//a[@id='ui-id-5']")).click();
+
+        // Thread.sleep(3000);
+
+        List<WebElement> country = driver.findElements(By.cssSelector("li[class='ui-menu-item'] a"));
+
+        for (WebElement webElement : country) {
+            System.out.println("Ini adalah negara " + webElement.getText());
+            if (webElement.getText().equals("Indonesia")) {
+                webElement.click();
+                break;
+            }
+        }
+
+        Thread.sleep(3000);
+
+        // Hande radio button
+        driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_0")).click();
+
+        // Handle checkbox
+        driver.findElement(By.id("ctl00_mainContent_chk_friendsandfamily")).click();
+
+        Thread.sleep(3000);
 
         driver.close();
     }
