@@ -35,11 +35,11 @@ public class CheckoutProduct {
                 // List Product
                 List<WebElement> listProduct = driver.findElements(By.cssSelector(".inventory_item"));
 
-                String productName = "Sauce Labs Backpack";
+                String productName = "Test.allTheThings() T-Shirt (Red)";
 
                 WebElement product = listProduct.stream()
                                 .filter(prod -> prod.findElement(By.className("inventory_item_name")).getText()
-                                                .equals(productName))
+                                                .equalsIgnoreCase(productName))
                                 .findFirst()
                                 .orElseThrow(() -> new RuntimeException("Produk tidak ditemukan: " + productName));
 
@@ -48,12 +48,14 @@ public class CheckoutProduct {
                 // btn_primary btn_small btn_inventory ']
 
                 // button add to cart
-                product.findElement(By.xpath(
-                                "//div[@class='inventory_item_description']//child::div//child::button[@class='btn btn_primary btn_small btn_inventory ']"))
-                                .click();
+                // product.findElement(By.xpath(
+                // "//div[@class='inventory_item_description']//child::div//child::button[@class='btn
+                // btn_primary btn_small btn_inventory ']"))
+                // .click();
 
-                // product.findElement(By.xpath(".//button[contains(@class,
-                // 'btn_inventory')]")).click();
+                // looping product yang efisien yang mana ya mas ?
+
+                product.findElement(By.xpath(".//button[contains(@class, 'btn_inventory')]")).click();
 
                 System.out.println("list product" + product);
                 Thread.sleep(2000);
