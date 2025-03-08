@@ -38,7 +38,7 @@ public class Checkout {
         Thread.sleep(2000);
 
         // list product
-        String productName = "Sauce Labs Backpack";
+        String productName = "Test.allTheThings() T-Shirt (Red)";
         ProductPage2 productListPage = new ProductPage2(driver);
         productListPage.addToCart(productName);
 
@@ -64,12 +64,12 @@ public class Checkout {
         // Assert.assertEquals(confirmationMessage, "Thank you for your order!");
     }
 
-    @AfterClass
-    public void LogOut() {
-        LogoutPage logoutPage = new LogoutPage(driver);
-        logoutPage.logOut();
-        driver.quit();
-    }
+    // @AfterClass
+    // public void LogOut() {
+    // LogoutPage logoutPage = new LogoutPage(driver);
+    // logoutPage.logOut();
+    // driver.quit();
+    // }
 
     // Mapping
     @DataProvider
