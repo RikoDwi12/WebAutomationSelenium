@@ -12,6 +12,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.webautomation.pageOpject.ChartPage;
+import com.webautomation.pageOpject.CheckoutReview;
 import com.webautomation.pageOpject.ConfirmationPage;
 import com.webautomation.pageOpject.LoginPage;
 import com.webautomation.pageOpject.LogoutPage;
@@ -38,38 +39,39 @@ public class Checkout {
         Thread.sleep(2000);
 
         // list product
-        String productName = "Test.allTheThings() T-Shirt (Red)";
+        String productName = input.get("productName");
         ProductPage2 productListPage = new ProductPage2(driver);
         productListPage.addToCart(productName);
 
         // driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
 
-        // ProductPage productPage = new ProductPage(driver);
-        // productPage.addProductToCart("Sauce Labs Backpack");
-        // productPage.goToCart();
-        // Thread.sleep(1000);
+        // chart page / confirmation go to checkout
+        ChartPage chartPage = new ChartPage(driver);
+        Assert.assertTrue(chartPage.verifyCheckoutProduct(productName));
+        chartPage.goToCheckoutPage();
+        Thread.sleep(1000);
 
-        // ChartPage chartPage = new ChartPage(driver);
-        // chartPage.proceedToCheckout();
-        // Thread.sleep(1000);
+        // scenarioShiiping
+        SuggestionPage suggestionPage = new SuggestionPage(driver);
+        suggestionPage.fillCheckoutDetails(input.get("firstName"), input.get("lastName"), input.get("postalCode"));
+        Thread.sleep(1000);
 
-        // // Scenario shipping
-        // SuggestionPage checkoutPage = new SuggestionPage(driver);
-        // checkoutPage.fillCheckoutDetails("coba12", "coba", "180202");
-        // checkoutPage.finishCheckout();
-        // Thread.sleep(2000);
+        CheckoutReview checkoutReview = new CheckoutReview(driver);
+        checkoutReview.Review();
+        Thread.sleep(1000);
 
-        // ConfirmationPage confirmationPage = new ConfirmationPage(driver);
-        // String confirmationMessage = confirmationPage.getConfirmationMessage();
-        // Assert.assertEquals(confirmationMessage, "Thank you for your order!");
+        // confirmation
+        ConfirmationPage confirmationPage = new ConfirmationPage(driver);
+        String confirmationMessage = confirmationPage.getConfirmationMessage();
+        Assert.assertEquals(confirmationMessage, "Thank you for your order!");
     }
 
-    // @AfterClass
-    // public void LogOut() {
-    // LogoutPage logoutPage = new LogoutPage(driver);
-    // logoutPage.logOut();
-    // driver.quit();
-    // }
+    @AfterClass
+    public void LogOut() {
+        LogoutPage logoutPage = new LogoutPage(driver);
+        logoutPage.logOut();
+        driver.quit();
+    }
 
     // Mapping
     @DataProvider
@@ -77,9 +79,22 @@ public class Checkout {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("userEmail", "standard_user");
         map.put("password", "secret_sauce");
-        map.put("productName", "ZARA COAT 3");
+        map.put("productName", "Sauce Labs Bike Light");
+        map.put("firstName", "John");
+        map.put("lastName", "Doe");
+        map.put("postalCode", "12345");
 
         return new Object[][] { { map } };
     }
+
+    // @DataProvider
+    // public Object[][] dataSendObjects() {
+    // HashMap<String, String> map = new HashMap<String, String>();
+    // map.put("firstName", "standard_user");
+    // map.put("lastName", "secret_sauce");
+    // map.put("postalCode", "secret_sauce");
+
+    // return new Object[][] { { map } };
+    // }
 
 }
