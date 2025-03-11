@@ -2,7 +2,6 @@ package automation;
 
 import java.util.HashMap;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -16,7 +15,6 @@ import com.webautomation.pageOpject.CheckoutReview;
 import com.webautomation.pageOpject.ConfirmationPage;
 import com.webautomation.pageOpject.LoginPage;
 import com.webautomation.pageOpject.LogoutPage;
-import com.webautomation.pageOpject.ProductPage;
 import com.webautomation.pageOpject.ProductPage2;
 import com.webautomation.pageOpject.SuggestionPage;
 
@@ -57,7 +55,9 @@ public class Checkout {
         Thread.sleep(1000);
 
         CheckoutReview checkoutReview = new CheckoutReview(driver);
-        checkoutReview.Review();
+        Assert.assertTrue(checkoutReview.verifyProducts(productName));
+        checkoutReview.getReviewText();
+
         Thread.sleep(1000);
 
         // confirmation
