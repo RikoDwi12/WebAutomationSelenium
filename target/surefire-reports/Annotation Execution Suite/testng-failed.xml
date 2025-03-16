@@ -6,7 +6,7 @@
     <classes>
       <class name="automation.Checkout">
         <methods>
-          <include name="testCheckoutDetail" invocation-numbers="0"/>
+          <include name="testCheckoutDetail"/>
           <include name="LogOut"/>
           <include name="setUp"/>
         </methods>

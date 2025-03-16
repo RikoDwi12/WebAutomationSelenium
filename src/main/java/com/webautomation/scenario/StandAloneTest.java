@@ -16,7 +16,7 @@ public class StandAloneTest {
 
                 // Setup Driver
                 System.setProperty("webdriver.chrome.driver",
-                                "C:\\chromedriver-win132/chromedriver.exe");
+                                "C:\\chromedriver-win134\\chromedriver.exe");
 
                 WebDriver driver = new ChromeDriver();
                 driver.get("https://rahulshettyacademy.com/client");

@@ -6,14 +6,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ProductPage {
+public class ProductPageOld {
     WebDriver driver;
 
     // Menggunakan className yang benar
     private By productList = By.className("inventory_item");
     private By cartLink = By.id("shopping_cart_container");
 
-    public ProductPage(WebDriver driver) {
+    public ProductPageOld(WebDriver driver) {
         this.driver = driver;
     }
 

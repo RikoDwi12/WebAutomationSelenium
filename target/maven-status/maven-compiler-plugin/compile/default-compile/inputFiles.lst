@@ -1,4 +1,4 @@
-C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\abstractcomponents\AbstractComponent.java
+C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\abstractcomponents\AbstractComponentWait.java
 C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\locator\Alert.java
 C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\locator\DropdownLoopingButton.java
 C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\locator\DropdownSelect.java
@@ -8,10 +8,12 @@ C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\locator\HandleWind
 C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\locator\LocatorPractice.java
 C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\Main.java
 C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\pageOpject\ChartPage.java
+C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\pageOpject\CheckoutReview.java
 C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\pageOpject\ConfirmationPage.java
 C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\pageOpject\LoginPage.java
 C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\pageOpject\LogoutPage.java
 C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\pageOpject\ProductPage.java
+C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\pageOpject\ProductPage2.java
 C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\pageOpject\SuggestionPage.java
 C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\scenario\StandAloneTest.java
 C:\QA ENGINNER\TASK-2\TaskWeb\src\main\java\com\webautomation\scenarioTask\CheckoutProduct.java

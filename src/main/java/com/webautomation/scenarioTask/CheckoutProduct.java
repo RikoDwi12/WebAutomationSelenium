@@ -15,7 +15,7 @@ public class CheckoutProduct {
         public static void main(String[] args) throws InterruptedException {
                 // Setup Driver
                 System.setProperty("webdriver.chrome.driver",
-                                "C:\\chromedriver-win132/chromedriver.exe");
+                                "C:\\chromedriver-win134/chromedriver.exe");
 
                 WebDriver driver = new ChromeDriver();
                 driver.get("https://www.saucedemo.com/");

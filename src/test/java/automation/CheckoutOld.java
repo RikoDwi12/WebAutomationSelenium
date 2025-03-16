@@ -14,15 +14,15 @@ import com.webautomation.pageOpject.ChartPage;
 import com.webautomation.pageOpject.ConfirmationPage;
 import com.webautomation.pageOpject.LoginPage;
 import com.webautomation.pageOpject.LogoutPage;
-import com.webautomation.pageOpject.ProductPage;
+import com.webautomation.pageOpject.ProductPageOld;
 import com.webautomation.pageOpject.SuggestionPage;
 
-public class Checkout2 {
+public class CheckoutOld {
     WebDriver driver;
 
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver-win132/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver-win134/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/");

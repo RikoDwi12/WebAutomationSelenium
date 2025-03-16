@@ -2,27 +2,27 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-08T15:04:17 WIB" name="Annotation Execution Suite" finished-at="2025-03-08T15:04:23 WIB" duration-ms="6415">
+  <suite started-at="2025-03-14T03:58:13 WIB" name="Annotation Execution Suite" finished-at="2025-03-14T03:58:25 WIB" duration-ms="11972">
     <groups>
     </groups>
-    <test started-at="2025-03-08T15:04:17 WIB" name="MyTestGroup" finished-at="2025-03-08T15:04:23 WIB" duration-ms="6415">
+    <test started-at="2025-03-14T03:58:13 WIB" name="MyTestGroup" finished-at="2025-03-14T03:58:25 WIB" duration-ms="11972">
       <class name="automation.Checkout">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:automation.Checkout@6af93788]" started-at="2025-03-08T15:04:17 WIB" name="setUp" finished-at="2025-03-08T15:04:20 WIB" duration-ms="3247" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:automation.Checkout@38c5cc4c]" started-at="2025-03-14T03:58:13 WIB" name="setUp" finished-at="2025-03-14T03:58:16 WIB" duration-ms="3713" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testCheckoutDetail(java.util.HashMap)[pri:0, instance:automation.Checkout@6af93788]" started-at="2025-03-08T15:04:20 WIB" name="testCheckoutDetail" data-provider="dataTestMapping" finished-at="2025-03-08T15:04:23 WIB" duration-ms="2490" status="PASS">
+        <test-method signature="testCheckoutDetail(java.util.HashMap)[pri:0, instance:automation.Checkout@38c5cc4c]" started-at="2025-03-14T03:58:16 WIB" name="testCheckoutDetail" data-provider="dataTestMapping" finished-at="2025-03-14T03:58:23 WIB" duration-ms="7083" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{password=secret_sauce, userEmail=standard_user, productName=ZARA COAT 3}]]>
+                <![CDATA[{firstName=John, lastName=Doe, password=secret_sauce, userEmail=standard_user, productName=Sauce Labs Bike Light, postalCode=12345}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCheckoutDetail -->
-        <test-method is-config="true" signature="LogOut()[pri:0, instance:automation.Checkout@6af93788]" started-at="2025-03-08T15:04:23 WIB" name="LogOut" finished-at="2025-03-08T15:04:23 WIB" duration-ms="630" status="PASS">
+        <test-method is-config="true" signature="LogOut()[pri:0, instance:automation.Checkout@38c5cc4c]" started-at="2025-03-14T03:58:23 WIB" name="LogOut" finished-at="2025-03-14T03:58:25 WIB" duration-ms="1119" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LogOut -->

@@ -15,7 +15,7 @@ import com.webautomation.pageOpject.CheckoutReview;
 import com.webautomation.pageOpject.ConfirmationPage;
 import com.webautomation.pageOpject.LoginPage;
 import com.webautomation.pageOpject.LogoutPage;
-import com.webautomation.pageOpject.ProductPage2;
+import com.webautomation.pageOpject.ProductPageNew;
 import com.webautomation.pageOpject.SuggestionPage;
 
 public class Checkout {
@@ -23,7 +23,7 @@ public class Checkout {
 
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver-win132/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver-win134/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/");
@@ -38,7 +38,7 @@ public class Checkout {
 
         // list product
         String productName = input.get("productName");
-        ProductPage2 productListPage = new ProductPage2(driver);
+        ProductPageNew productListPage = new ProductPageNew(driver);
         productListPage.addToCart(productName);
 
         // driver.findElement(By.cssSelector("[routerlink*='cart']")).click();

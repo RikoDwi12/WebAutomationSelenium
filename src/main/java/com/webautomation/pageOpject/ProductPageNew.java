@@ -13,11 +13,11 @@ import java.time.Duration;
 
 import com.webautomation.abstractcomponents.AbstractComponentWait;
 
-public class ProductPage2 extends AbstractComponentWait {
+public class ProductPageNew extends AbstractComponentWait {
     WebDriver driver;
     WebDriverWait wait;
 
-    public ProductPage2(WebDriver driver) {
+    public ProductPageNew(WebDriver driver) {
         super(driver);
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
