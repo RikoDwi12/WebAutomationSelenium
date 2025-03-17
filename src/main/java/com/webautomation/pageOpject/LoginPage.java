@@ -26,33 +26,48 @@ public class LoginPage extends AbstractComponentWait {
     @FindBy(id = "login-button")
     WebElement loginBtn;
 
-    // ✅ Tambahkan elemen yang muncul saat login sukses
+    // Locator untuk halaman setelah login sukses
     By inventoryPage = By.id("inventory_container");
 
-    // ✅ Tambahkan elemen yang muncul saat login gagal
-    By errorMessage = By.cssSelector(".error-message-container");
+    // Locator untuk pesan error saat login gagal
+    By errorMessage = By.cssSelector("h3[data-test='error']");
 
-    public void loginApplication(String email, String password) {
+    public String loginApplication(String email, String password) {
         visibilityOfElementLocated(By.id("user-name"));
         userEmail.sendKeys(email);
         userPassword.sendKeys(password);
         loginBtn.click();
+
+        if (isLoginSuccessful()) {
+            return "Login berhasil: " + driver.findElement(inventoryPage).getText();
+        } else if (isLoginFailed()) {
+            return "Login gagal: " + getErrorMessage();
+        }
+        return "Login status tidak diketahui.";
     }
 
-    // ✅ Cek apakah login berhasil
+    // ✅ Metode untuk cek login sukses
     public boolean isLoginSuccessful() {
         return isElementDisplayed(inventoryPage);
     }
 
-    // ✅ Cek apakah login gagal
+    // ✅ Metode untuk cek login gagal
     public boolean isLoginFailed() {
         return isElementDisplayed(errorMessage);
     }
+    
+    // ✅ Metode untuk mendapatkan pesan error
+    public String getErrorMessage() {
+        if (isLoginFailed()) {
+            return driver.findElement(errorMessage).getText();
+        }
+        return "";
+    }
 
-    // ✅ Helper method untuk mengecek apakah elemen ada di halaman
-    public boolean isElementDisplayed(By element) {
+    // Helper method untuk mengecek apakah elemen ada di halaman
+    public boolean isElementDisplayed(By locator) {
         try {
-            return driver.findElement(element).isDisplayed();
+            return driver.findElement(locator).isDisplayed();
         } catch (Exception e) {
             return false;
         }

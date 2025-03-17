@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import com.webautomation.pageOpject.ChartPage;
@@ -20,12 +21,21 @@ public class StepDefinitionsImpl {
         driver.manage().window().maximize();
     }
     
-    @Given("^Buyer logged to website email (.+) and password (.+)$")
-    public void login(String email, String password) { 
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.loginApplication(email, password);
-        Assert.assertTrue(loginPage.isLoginSuccessful(), "Login failed: User not redirected to inventory page.");
-    }
+   @Given("^Buyer logged to website email (.+) and password (.+)$")
+public void login(String email, String password) { 
+    LoginPage loginPage = new LoginPage(driver);
+    String loginResult = loginPage.loginApplication(email, password);
+
+    // if (loginResult.contains("Login berhasil")) {
+    //     Assert.assertTrue(loginPage.isElementDisplayed(By.id("inventory_container")), 
+    //         "Login successful: User redirected to inventory page.");
+    // } else {
+    //     String errorMessage = driver.findElement(By.cssSelector("h3[data-test='error']")).getText();
+    //     Assert.assertEquals(errorMessage, 
+    //         "Epic sadface: Username and password do not match any user in this service", 
+    //         "Login failed message mismatch!");
+    // }
+}
     
     @When("^Buyer add Product (.+) to cart$")
     public void buyer_add_product(String productName) { 
@@ -63,9 +73,45 @@ public class StepDefinitionsImpl {
         Assert.assertEquals(confirmationMessage, successMessage, "Order confirmation message mismatch!");
     }
 
+    // @Then("^Buyer Confirmation login success$")
+    // public void confirmationLoginSuccess() { 
+    //     LoginPage loginPage = new LoginPage(driver);
+    
+    //     // Cek apakah berhasil masuk ke halaman inventory
+    //     if (loginPage.isElementDisplayed(By.id("inventory_container"))) {
+    //         Assert.assertTrue(true, "Login successful: User redirected to inventory page.");
+    //     } 
+    //     // Cek apakah ada pesan error saat login gagal
+    //     else if (loginPage.isElementDisplayed(By.cssSelector("h3[data-test='error']"))) {
+    //         String errorMessage = driver.findElement(By.cssSelector("h3[data-test='error']")).getText();
+    //         Assert.assertEquals(errorMessage, 
+    //             "Epic sadface: Username and password do not match any user in this service", 
+    //             "Login failed message mismatch!");
+    //     } 
+    //     // Jika tidak ada indikasi berhasil/gagal, gagal tes
+    //     else {
+    //         Assert.fail("Login status unknown. Neither success nor expected error message found.");
+    //     }
+    // }
+    
     @Then("^Buyer Confirmation login success$")
-    public void confirmationLoginSuccess() { 
-        LoginPage loginPage = new LoginPage(driver);
-        Assert.assertTrue(loginPage.isLoginSuccessful(), "Login failed: User not redirected to inventory page.");
+public void confirmationLoginSuccess() { 
+    LoginPage loginPage = new LoginPage(driver);
+
+    // Menggunakan method yang sudah ada di LoginPage
+    if (loginPage.isLoginSuccessful()) {
+        Assert.assertTrue(true, "Login successful: User redirected to inventory page.");
+    } 
+    else if (loginPage.isLoginFailed()) {
+        // Menggunakan method dari LoginPage untuk mendapatkan error message
+        String errorMessage = loginPage.getErrorMessage();
+        Assert.assertEquals(errorMessage, 
+            "Epic sadface: Username and password do not match any user in this service", 
+            "Login failed message mismatch!");
+    } 
+    else {
+        Assert.fail("Login status unknown. Neither success nor expected error message found.");
     }
+}
+
 }

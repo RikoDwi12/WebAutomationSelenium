@@ -41,8 +41,6 @@ public class Checkout {
         ProductPageNew productListPage = new ProductPageNew(driver);
         productListPage.addToCart(productName);
 
-        // driver.findElement(By.cssSelector("[routerlink*='cart']")).click();
-
         // chart page / confirmation go to checkout
         ChartPage chartPage = new ChartPage(driver);
         Assert.assertTrue(chartPage.verifyCheckoutProduct(productName));

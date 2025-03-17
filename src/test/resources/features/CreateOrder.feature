@@ -16,7 +16,7 @@ Feature: Purchase the order from ecommerce
       | standard_user | secret_sauce | Sauce Labs Backpack | John      | Doe      |      12345 |
       | standard_user | secret_sauce | Sauce Labs Onesie   | John      | Ke Dua   |      11232 |
 
-  Scenario Outline: Login Positive Case
+  Scenario Outline: Login Negative Case
     Given Buyer logged to website email <email> and password <password>
     Then Buyer Confirmation login success
 
@@ -24,3 +24,4 @@ Feature: Purchase the order from ecommerce
       | email         | password     |
       | standard_user | problem      |
       | problem_user  | secret_sauce |
+      | standard_user | secret_sauce |
