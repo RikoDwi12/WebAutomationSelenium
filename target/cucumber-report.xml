@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="42.424" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-03-17T07:03:45.392434600Z">
+<testcase classname="Purchase the order from ecommerce" name="Create Order Positive Case - #1.1" time="7.829">
+<system-out><![CDATA[
+Given Buyer landing to ecommerce............................................passed
+Given Buyer logged to website email standard_user and password secret_sauce.passed
+When Buyer add Product Sauce Labs Backpack to cart..........................passed
+And Buyer click checkout "Sauce Labs Backpack"..............................passed
+And Buyer fill the form with "John", "Doe", and "12345".....................passed
+And Buyer place order "Sauce Labs Backpack".................................passed
+Then Buyer should see the order confirmation "Thank you for your order!"....passed
+]]></system-out>
+</testcase>
+<testcase classname="Purchase the order from ecommerce" name="Create Order Positive Case - #1.2" time="6.58">
+<system-out><![CDATA[
+Given Buyer landing to ecommerce............................................passed
+Given Buyer logged to website email standard_user and password secret_sauce.passed
+When Buyer add Product Sauce Labs Onesie to cart............................passed
+And Buyer click checkout "Sauce Labs Onesie"................................passed
+And Buyer fill the form with "John", "Ke Dua", and "11232"..................passed
+And Buyer place order "Sauce Labs Onesie"...................................passed
+Then Buyer should see the order confirmation "Thank you for your order!"....passed
+]]></system-out>
+</testcase>
+<testcase classname="Purchase the order from ecommerce" name="Login Negative Case - #1.1" time="22.965">
+<system-out><![CDATA[
+Given Buyer landing to ecommerce............................................passed
+Given Buyer logged to website email standard_user and password problem......passed
+Then Buyer Confirmation login success.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Purchase the order from ecommerce" name="Login Negative Case - #1.2" time="2.492">
+<system-out><![CDATA[
+Given Buyer landing to ecommerce............................................passed
+Given Buyer logged to website email problem_user and password secret_sauce..passed
+Then Buyer Confirmation login success.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Purchase the order from ecommerce" name="Login Negative Case - #1.3" time="2.231">
+<system-out><![CDATA[
+Given Buyer landing to ecommerce............................................passed
+Given Buyer logged to website email standard_user and password secret_sauce.passed
+Then Buyer Confirmation login success.......................................passed
+]]></system-out>
+</testcase>
+</testsuite>
