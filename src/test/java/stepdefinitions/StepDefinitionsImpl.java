@@ -73,57 +73,6 @@ public void login(String email, String password) {
         Assert.assertEquals(confirmationMessage, successMessage, "Order confirmation message mismatch!");
     }
 
-    // @Then("^Buyer Confirmation login success$")
-    // public void confirmationLoginSuccess() { 
-    //     LoginPage loginPage = new LoginPage(driver);
-    
-    //     // Cek apakah berhasil masuk ke halaman inventory
-    //     if (loginPage.isElementDisplayed(By.id("inventory_container"))) {
-    //         Assert.assertTrue(true, "Login successful: User redirected to inventory page.");
-    //     } 
-    //     // Cek apakah ada pesan error saat login gagal
-    //     else if (loginPage.isElementDisplayed(By.cssSelector("h3[data-test='error']"))) {
-    //         String errorMessage = driver.findElement(By.cssSelector("h3[data-test='error']")).getText();
-    //         Assert.assertEquals(errorMessage, 
-    //             "Epic sadface: Username and password do not match any user in this service", 
-    //             "Login failed message mismatch!");
-    //     } 
-    //     // Jika tidak ada indikasi berhasil/gagal, gagal tes
-    //     else {
-    //         Assert.fail("Login status unknown. Neither success nor expected error message found.");
-    //     }
-    // }
-    
-//     @Then("^Buyer Confirmation login success$")
-// public void confirmationLoginSuccess() { 
-//     LoginPage loginPage = new LoginPage(driver);
-
-//     // Menggunakan method yang sudah ada di LoginPage
-//     if (loginPage.isLoginSuccessful()) {
-//         Assert.assertTrue(true, "Login successful: User redirected to inventory page.");
-//     } 
-//     else if (loginPage.isLoginFailed()) {
-//         // Menggunakan method dari LoginPage untuk mendapatkan error message
-//         String errorMessage = loginPage.getErrorMessage();
-//         Assert.assertEquals(errorMessage, 
-//             "Epic sadface: Username and password do not match any user in this service", 
-//             "Login failed message mismatch!");
-//     } 
-//     else {
-//         Assert.fail("Login status unknown. Neither success nor expected error message found.");
-//     }
-// }
-// @Then("^Buyer should see login error message {string}$")
-// public void buyer_should_see_login_error_message(String message) {
-//     LoginPage loginPage = new LoginPage(driver);
-    
-//     // Ambil error message yang muncul di halaman login
-//     String actualErrorMessage = loginPage.getErrorMessage();
-    
-//     // Pastikan error message sesuai dengan yang diharapkan
-//     Assert.assertEquals(actualErrorMessage.trim(), message.trim(), "Login failed message mismatch!");
-// }
-
 @Then("Buyer should see login error message {string}")
 public void buyer_should_see_login_error_message(String expectedMessage) {
     LoginPage loginPage = new LoginPage(driver);
