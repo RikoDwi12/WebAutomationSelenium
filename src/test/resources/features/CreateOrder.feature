@@ -1,3 +1,4 @@
+# 1 feat harus ada di scenario
 Feature: Purchase the order from ecommerce
 
   Background: Buyer landed to website
@@ -15,13 +16,3 @@ Feature: Purchase the order from ecommerce
       | email         | password     | ProductName         | firstName | lastName | postalCode |
       | standard_user | secret_sauce | Sauce Labs Backpack | John      | Doe      |      12345 |
       | standard_user | secret_sauce | Sauce Labs Onesie   | John      | Ke Dua   |      11232 |
-
-  Scenario Outline: Login Negative Case
-    Given Buyer logged to website email <email> and password <password>
-    Then Buyer Confirmation login success
-
-    Examples:
-      | email         | password     |
-      | standard_user | problem      |
-      | problem_user  | secret_sauce |
-      | standard_user | secret_sauce |
