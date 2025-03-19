@@ -4,18 +4,13 @@ import java.util.HashMap;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.webautomation.pageOpject.ChartPage;
-import com.webautomation.pageOpject.ConfirmationPage;
 import com.webautomation.pageOpject.LoginPage;
 import com.webautomation.pageOpject.LogoutPage;
-import com.webautomation.pageOpject.ProductPageOld;
-import com.webautomation.pageOpject.SuggestionPage;
 
 public class CheckoutOld {
     WebDriver driver;
